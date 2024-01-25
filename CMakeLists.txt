@@ -67,7 +67,7 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
   endif(NOT CMAKE_CXX_FLAGS MATCHES "-Wextra")
 
   # Use -Werror for clang only.
-  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT WIN32)
     if(NOT CMAKE_CXX_FLAGS MATCHES "-Werror")
       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
     endif(NOT CMAKE_CXX_FLAGS MATCHES "-Werror")
